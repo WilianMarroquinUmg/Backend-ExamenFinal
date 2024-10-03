@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +13,5 @@ Route::group(['prefix' => 'auth'], function () {
 
     Route::post('login', [\App\Http\Controllers\Api\Auth\AuthApiController::class, 'login'])->middleware('guest');
 
-    Route::post('logout', [\App\Http\Controllers\Api\Auth\AuthApiController::class, 'logout'])->middleware('auth:sanctum');
-
-});
+require __DIR__.'/auth.php';
 
