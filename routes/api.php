@@ -13,5 +13,7 @@ Route::group(['prefix' => 'auth'], function () {
 
     Route::post('login', [\App\Http\Controllers\Api\Auth\AuthApiController::class, 'login'])->middleware('guest');
 
+});
+
 require __DIR__.'/auth.php';
 

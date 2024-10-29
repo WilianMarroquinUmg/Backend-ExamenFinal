@@ -23,11 +23,11 @@ class AuthApiController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'usuario_dominio' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
 
-        if (!Auth::attempt($request->only('usuario_dominio', 'password'))) {
+        if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
                 'message' => 'Credenciales incorrectas'
             ], 401);
